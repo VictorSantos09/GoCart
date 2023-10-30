@@ -32,6 +32,4 @@ import paragrafDefault from '../components/texts/ParagrafDefault.vue';
     <paragrafDefault msg="and i'm a p" />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
