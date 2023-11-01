@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import ProductCard from "../components/Cards/ProductCard.vue";
 import InputText from "../components/Inputs/InputText.vue";
+import ButtonDefault from "../components/buttons/ButtonDefault.vue";
 
 const products = ref([
     {
@@ -71,13 +72,11 @@ const products = ref([
     <div class="container">
         <div class="row mb-5">
             <InputText class="col" placeholder="Digite o produto que deseja buscar" />
-            <span class="col-2">
-                <ButtonDefault class="btn-lg" msg="Buscar" />
-            </span>
+            <ButtonDefault class="col-2 mx-4 btn-lg" msg="Buscar" />
         </div>
 
         <div class="row">
-            <div class="col-3 mb-5 w-25" v-for="product in products" :key="product.id">
+            <div class="col-3 mb-3" v-for="product in products" :key="product.id">
                 <ProductCard :productPrice="product.price" :productName="product.name"
                     :productDescription="product.description" alt="Imagem de um iphone15"
                     url="src/assets/products/Iphone15.jpg" />

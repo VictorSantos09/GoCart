@@ -6,12 +6,12 @@ defineProps({
   alt: String,
   productDescription: String,
   productName: String,
-  productPrice: Int32Array,
+  productPrice: Number,
 });
 </script>
 
 <template>
-  <div class="card border border-solid border-dark border-2" style="width: 18rem">
+  <div class="card border border-solid border-light border-5" style="width: 18rem">
     <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <img :src="url" class="card-img-top" :alt="alt" />
       <div class="card-body">
@@ -30,7 +30,7 @@ defineProps({
       </div>
     </button>
 
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end p-2">
       <buttonDefault class="m-2 btn-lg" msg="Comprar" />
     </div>
   </div>
