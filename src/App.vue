@@ -7,9 +7,11 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <div class="d-flex">
-          <img src="/vite.svg" alt="" width="40" class="d-inline-block align-text-top" />
-          <h3 class="mt-2">GoCart</h3>
+        <div class="nav-item me-5">
+          <router-link to="/">
+            <img src="/vite.svg" alt="" width="40" />
+            <h4>GoCart</h4>
+          </router-link>
         </div>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -18,9 +20,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item mt-2">
+          <li class="nav-item">
             <router-link to="/">
-              <h3 class="text-dark">Home</h3>
+              <h4>Sobre Nós</h4>
             </router-link>
           </li>
         </ul>

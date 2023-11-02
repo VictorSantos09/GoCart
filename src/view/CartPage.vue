@@ -3,19 +3,18 @@
 
 <template>
     <section class="container">
-        <div class="w-25 my-5 border border-light border-5 radious-5">
-            <div class="m-3">
-                <h5>Valor Final</h5>
-                <h5>Total de Produtos</h5>
-                <h5>Endereço</h5>
-                <h5>Forma de Pagamento</h5>
-                <button class="btn btn-primary">Confirmar Compra</button>
+        <div class="m-3 bg-light rounded-3">
+            <div class="p-3">
+                <h5 class="p-2">10 Produtos Selecionados</h5>
+                <h5 class="p-2">Rua Bolívia, 342. Ponta Aguda, Blumenau-SC</h5>
+                <h5 class="p-2">Você Pagará R$ 1.543,34</h5>
+                <button class="btn btn-primary my-2">Confirmar Compra</button>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-3 bg-light bg-gradient card border border-5 border-light">
-                <img src="../../public/cart.png" class="card-img-top" alt="...">
+            <div class="col-3 card p-3">
+                <img src="../../public/cart.png" class="card-img-top w-50" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Nome Produto</h5>
                     <p class="card-text">Descrição Produto</p>
@@ -41,6 +40,7 @@
                     <p class="card-text">Valor Total</p>
                 </div>
             </div>
+
         </div>
     </section>
 </template>
