@@ -5,11 +5,13 @@ import App from './App.vue'
 import { createRouter, createWebHistory} from 'vue-router'
 import MainPage from './view/MainPage.vue';
 import ComponentsPresentantion from './view/ComponentsPresentantion.vue'
+import CartPage from './view/CartPage.vue'
 
 
 const routes = [
     { path: '/', component: MainPage },
-    {path: '/components', component: ComponentsPresentantion}
+    {path: '/components', component: ComponentsPresentantion},
+    {path: '/cart', component: CartPage}
   ]
 
 const router = createRouter({

@@ -1,6 +1,4 @@
 <script setup>
-import ButtonDefault from './components/buttons/ButtonDefault.vue';
-import ButtonError from './components/buttons/ButtonError.vue';
 
 </script>
 
@@ -27,37 +25,14 @@ import ButtonError from './components/buttons/ButtonError.vue';
           </li>
         </ul>
 
-        <div class="d-flex">
-          <button class="btn" data-bs-toggle="modal" data-bs-target="#visualizaoItensPedidos">
-            <span class="top-0 start-100 translate-middle badge rounded-pill bg-primary">
-              9
-            </span>
-            <img width="50" class="img-fluid" src="/cart.png" alt="" />
-          </button>
-        </div>
+        <router-link to="/cart">
+          <img width="50" class="img-fluid" src="/cart.png" alt="" />
+          <span class="top-0 start-100 translate-middle badge rounded-pill bg-primary">
+            9
+          </span>
+        </router-link>
       </div>
     </div>
   </nav>
-
-  <!--Itens Pedidos Modal-->
-  <div class="modal fade" id="visualizaoItensPedidos">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title">Produtos no Carrinho</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" v-for="product in products" :key="product.id">
-          <ProductCard />
-        </div>
-        <div class="modal-footer">
-          <div class="d-flex">
-            <ButtonError class="btn btn-danger mx-2" data-bs-dismiss="modal" aria-label="Close" msg="Voltar" />
-            <ButtonDefault msg="Confirmar" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <router-view></router-view>
 </template>
