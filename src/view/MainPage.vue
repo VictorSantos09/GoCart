@@ -24,12 +24,12 @@ const products = ref([
     <div class="container">
         <!--Apresentação Produtos-->
         <div class="row mb-5">
-            <InputText class="col" placeholder="Digite o produto que deseja buscar" />
-            <ButtonDefault class="col-2 mx-4 btn-lg" msg="Buscar" />
+            <InputText class="col" placeholder="Busque o produto" />
+            <ButtonDefault class="col-lg-2  col mx-4 btn-lg" msg="Buscar" />
         </div>
 
         <div class="row">
-            <div class="col-3 mb-3" v-for="product in products" :key="product.id">
+            <div class="col-lg-3 col mb-3" v-for="product in products" :key="product.id">
                 <ProductCard :product="product"/>
             </div>
         </div>
