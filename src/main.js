@@ -2,8 +2,6 @@ import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
 
-import ProductModel from "../src/models/ProductModel.js";
-
 import { createRouter, createWebHistory } from "vue-router";
 import MainPage from "./view/MainPage.vue";
 import ComponentsPresentantion from "./view/ComponentsPresentantion.vue";
@@ -15,12 +13,9 @@ const routes = [
   { path: "/components", component: ComponentsPresentantion },
   { path: "/cart", component: CartPage },
   {
-    path: "/product",
-    name: "product",
+    path: "/product/:id",
     component: ProductDetails,
-    props: {
-      product: ProductModel
-    },
+    props: true,
   },
 ];
 

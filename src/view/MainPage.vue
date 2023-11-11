@@ -3,21 +3,10 @@ import { ref } from "vue";
 import ProductCard from "../components/Cards/ProductCard.vue";
 import InputText from "../components/Inputs/InputText.vue";
 import ButtonDefault from "../components/buttons/ButtonDefault.vue";
-import ProductModel from "../Models/ProductModel.js";
+import FakeDatabase from "../FakeDatabase";
 
 
-const products = ref([
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-    new ProductModel(1,"Iphone 15", 100,"Bom", "src/assets/products/Iphone15.jpg", "Imagem de um Iphone15"),
-]);
+const products = ref(FakeDatabase.produtos);
 </script>
 
 <template>
