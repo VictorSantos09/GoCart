@@ -3,10 +3,18 @@ import { ref } from "vue";
 import ProductCard from "../components/Cards/ProductCard.vue";
 import InputText from "../components/Inputs/InputText.vue";
 import ButtonDefault from "../components/buttons/ButtonDefault.vue";
-import FakeDatabase from "../FakeDatabase";
+import ApiService from "../services/ApiService";
 
+const products = ref();
 
-const products = ref(FakeDatabase.produtos);
+function GetProducts() {
+    return ApiService.request("http://localhost:8080/product").then((data) => {
+        products.value = data;
+        console.log(products.value);
+    })
+}
+
+GetProducts()
 </script>
 
 <template>
@@ -16,10 +24,9 @@ const products = ref(FakeDatabase.produtos);
             <InputText class="col" placeholder="Busque o produto" />
             <ButtonDefault class="col-lg-2  col mx-4 btn-lg" msg="Buscar" />
         </div>
-
         <div class="row">
-            <div class="col-lg-3 col mb-3" v-for="product in products" :key="product.id">
-                <ProductCard :product="product"/>
+            <div class="col-lg-3 col mb-3" v-for="product in products" :key="product.idProduct">
+                <ProductCard :product="product" />
             </div>
         </div>
 

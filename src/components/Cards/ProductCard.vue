@@ -9,12 +9,12 @@ const props = defineProps({
 
 <template>
   <div class="card border border-solid border-light border-5">
-    <router-link :to="'/product/' + product.id">
+    <router-link :to="'/product/' + product.idProduct">
       <button class="btn">
         <img
-          :src="product.imageUrl"
+          :src="product.images.url"
           class="card-img-top img-fluid rounded"
-          :alt="product.alt"
+          :alt="product.images.altText"
         />
         <div class="card-body">
           <h3 class="card-title">{{ product.name }}</h3>
