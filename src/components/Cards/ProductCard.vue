@@ -1,10 +1,15 @@
 <script setup>
 import buttonDefault from "../buttons/ButtonDefault.vue";
 import ProductModel from "../../Models/ProductModel";
+import Cart from "../../services/CartService";
 
 const props = defineProps({
   product: ProductModel,
 });
+
+function addToCart() {
+  Cart.addProductToCart(props.product);
+}
 </script>
 
 <template>
@@ -18,7 +23,6 @@ const props = defineProps({
         />
         <div class="card-body">
           <h3 class="card-title">{{ product.name }}</h3>
-          <p class="card-text">{{ product.description }}</p>
 
           <h4 class="card-text d-flex">R$ {{ product.price }}</h4>
           <h6 class="card-text d-flex">Em até 12x</h6>
@@ -28,7 +32,7 @@ const props = defineProps({
     </router-link>
 
     <div class="d-flex justify-content-end p-2">
-      <buttonDefault class="m-2 btn-lg" msg="Comprar" />
+    <button class="m-2 btn btn-primary" @click="addToCart()">Adicionar ao Carrinho</button>
     </div>
   </div>
 </template>

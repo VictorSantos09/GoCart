@@ -11,7 +11,6 @@ var product = ref({})
 function getProductById() {
     ApiService.request("http://localhost:8080/product/id?id=" + props.id).then((data) => {
         product.value = data;
-        console.log(data);
     })
 }
 getProductById()

@@ -1,4 +1,8 @@
 <script setup>
+import { ref } from "vue";
+import Cart from "./services/CartService";
+
+var totalProducts = ref(Cart.products.length || 0);
 
 </script>
 
@@ -30,7 +34,7 @@
         <router-link to="/cart">
           <img width="50" class="img-fluid" src="/cart.png" alt="" />
           <span class="top-0 start-100 translate-middle badge rounded-pill bg-primary">
-            9
+            {{ totalProducts }}
           </span>
         </router-link>
       </div>
