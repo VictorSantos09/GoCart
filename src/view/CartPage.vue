@@ -5,12 +5,11 @@ import { ref, computed } from 'vue';
 const products = ref(Cart.getProductsFromLocalStorage());
 const totalPrice = computed(() => {
     return products.value.reduce((total, product) => {
-        return total + product.price;
+        return total + product.product.price;
     }, 0);
 
 
 });
-
 </script>
 
 <template>
@@ -45,24 +44,32 @@ const totalPrice = computed(() => {
                 <tr v-for="product in products" :key="product.idProduct">
                     <td>
                         <div class="d-flex">
-                            <img :src="product.images.url" class="img-fluid w-25 h-50" :alt="product.images.altText">
+                            <img :src="product.product.images.url" class="img-fluid w-25 h-50" :alt="product.product.images.altText">
                             <div class="container mt-3">
-                                <p>{{ product.name }}</p>
+                                <p>{{ product.product.name }}</p>
+                                
+                                <!--Remover Produto-->
                                 <button class="btn btn-outline-light align-self-bottom" style="color: gray;"
-                                    @click="Cart.removeProductFromCart(product.idProduct)">Remover</button>
+                                    @click="Cart.removeProductFromCart(product.product.idProduct)">Remover</button>
                             </div>
                         </div>
 
-                        <!--Remover Produto-->
                     </td>
                     <td>
                         <div class="d-flex">
-                            <button class="btn btn-light mx-2 fw-bolder fs-5">+</button>
-                            <input class="form-control quantity" type="number" value="1" name="" id="" disabled>
-                            <button class="btn btn-light mx-2 fw-bolder fs-5">-</button>
+                            <button class="btn btn-light mx-2 fw-bolder fs-5" @click="() => {
+                                product.amount++;
+                                
+                            }">+</button>
+                            <input class="form-control quantity" type="number" :value="product.amount" name="" id="" disabled>
+                            <button class="btn btn-light mx-2 fw-bolder fs-5" @click="() =>{
+                                if(product.amount > 1){
+                                    product.amount--;
+                                }
+                            }">-</button>
                         </div>
                     </td>
-                    <td>R$ {{ product.price }}</td>
+                    <td>R$ {{ product.product.price }}</td>
                 </tr>
             </tbody>
         </table>

@@ -11,12 +11,14 @@ public class ImageModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_IMAGE", unique = true, nullable = false)
     private Integer idImage;
-    @Column(name = "URL", nullable = false, unique = true)
+
+    @Column(name = "URL", nullable = false, unique = true, length = 800)
     private String url;
-    @Column(name = "ALT_TEXT", nullable = false, length = 80)
+
+    @Column(name = "ALT_TEXT", nullable = false, length = 150)
     private String altText;
 
-    @Column(name = "NAME", nullable = false, length = 800)
+    @Column(name = "NAME", nullable = false, length = 150)
     private String name;
 
     public ImageModel(String url, String altText, Integer id, String name) {

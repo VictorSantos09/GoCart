@@ -12,10 +12,13 @@ public class ProductModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_PRODUCT")
     private Integer idProduct;
-    @Column(name = "NAME", unique = true, nullable = false, length = 80)
+
+    @Column(name = "NAME", unique = true, nullable = false, length = 150)
     private String name;
-    @Column(name = "DESCRIPTION", nullable = false, unique = false, length = 600)
+
+    @Column(name = "DESCRIPTION", nullable = false, unique = false, length = 800)
     private String description;
+    
     @Column(name = "PRICE", nullable = false, unique = false)
     private Double price;
 
