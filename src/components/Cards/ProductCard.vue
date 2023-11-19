@@ -1,15 +1,16 @@
 <script setup>
 import buttonDefault from "../buttons/ButtonDefault.vue";
 import Cart from "../../services/CartService";
-import ItemPedido from "../../Models/ItemPedido";
+import ProductModel from "../../models/ProductModel";
+import OrderModel from "../../models/OrderModel";
 
 const props = defineProps({
-  product: ItemPedido,
+  product: ProductModel,
 });
 
 function addToCart() {
-  var pedido = new ItemPedido(props.product, 1);
-  Cart.addProductToCart(pedido);
+  const order = new OrderModel(props.product, 1);
+  Cart.addProductToCart(order);
 }
 
 </script>
@@ -18,11 +19,8 @@ function addToCart() {
   <div class="card border border-solid border-light border-5">
     <router-link :to="'/product/' + product.idProduct">
       <button class="btn">
-        <img
-          :src="product.images.url"
-          class="card-img-top img-thumbnail img-fluid rounded"
-          :alt="product.images.altText"
-        />
+        <img :src="product.images.url" class="card-img-top img-thumbnail img-fluid rounded"
+          :alt="product.images.altText" />
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
 
@@ -34,7 +32,7 @@ function addToCart() {
     </router-link>
 
     <div class="d-flex justify-content-end p-2">
-    <button class="m-2 btn btn-primary" @click="addToCart()">Adicionar ao Carrinho</button>
+      <button class="m-2 btn btn-primary" @click="addToCart()">Adicionar ao Carrinho</button>
     </div>
   </div>
 </template>

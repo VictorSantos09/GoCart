@@ -3,15 +3,13 @@ import { ref } from "vue";
 import ApiService from "../services/ApiService";
 const orders = ref([]);
 
-function GetProducts() {
+function GetOrders() {
     return ApiService.request("http://localhost:8080/order").then((data) => {
         orders.value = data;
     })
 }
 
-GetProducts();
-
-console.log(orders.value[0]);
+GetOrders();
 </script>
 
 <template>
@@ -26,20 +24,19 @@ console.log(orders.value[0]);
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="order in orders" :key="order.idProduct">
+                <tr v-for="order in orders" :key="order.id">
                     <td>
                         <div class="d-md-flex">
-                            <router-link :to="'/product/' + order.products[0].idProduct">
-                                {{ order.products.name }}
-                                <img :src="order.products[0].images.url" :alt="order.products[0].images.altText"
+                            <router-link :to="'/product/' + order.product.idProduct">
+                                <img :src="order.product.images.url" :alt="order.product.images.altText"
                                     class="img-size rounded-2">
                             </router-link>
-                            <p class="px-3">{{ order.products[0].name }}</p>
+                            <p class="px-3">{{ order.product.name }}</p>
                         </div>
                     </td>
                     <td>{{ order.amount }}</td>
-                    <td>R$ {{ order.products[0].price }}</td>
-                    <td>{{ order.products[0].price * order.amount }}</td>
+                    <td>R$ {{ order.product.price }}</td>
+                    <td>{{ order.product.price * order.amount }}</td>
                 </tr>
             </tbody>
         </table>
