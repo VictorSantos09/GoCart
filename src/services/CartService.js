@@ -1,5 +1,8 @@
+import {ref} from 'vue'
+
 export default class CartService {
   static products = this.getProductsFromLocalStorage();
+  static total = ref(this.products.length);
 
   static getTotalProducts() {
     return this.products.length;
@@ -12,12 +15,12 @@ export default class CartService {
 
   static saveProductsToLocalStorage(products) {
     localStorage.setItem("products", JSON.stringify(products));
-    console.log("produto adicionado", this.products);
   }
 
   static addProductToCart(product) {
     this.products.push(product);
     this.saveProductsToLocalStorage(this.products);
+    this.updateTotal();
   }
 
   static removeProductFromCart(productId) {
@@ -26,5 +29,16 @@ export default class CartService {
     );
     this.products.splice(index, 1);
     this.saveProductsToLocalStorage(this.products);
+    this.updateTotal();
+  }
+
+  static updateProduct(product){
+    this.removeProductFromCart(product.id);
+    this.addProductToCart(product);
+    this.updateTotal();
+  }
+
+  static updateTotal(){
+    this.total = this.getTotalProducts();
   }
 }
