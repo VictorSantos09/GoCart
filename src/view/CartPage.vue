@@ -1,16 +1,51 @@
 <script setup>
 import Cart from '../services/CartService';
-import { ref, computed } from 'vue';
+import BuyProductService from '../services/BuyProductService';
+import { ref } from 'vue';
 
 const products = ref(Cart.getProductsFromLocalStorage());
-const totalPrice = computed(() => {
-    return products.value.reduce((total, product) => {
-        return total + product.price;
-    }, 0);
+const totalPrice = ref(0);
+const confirmed = ref(false);
 
+function calculateTotalPrice() {
+    totalPrice.value = 0;
+    products.value.forEach(element => {
+        totalPrice.value += element.product.price * element.amount;
+    });
+}
 
-});
+function decrementAmount(product) {
+    if (product.amount > 1) {
+        product.amount--;
+        updateTotalPrice(product);
+    }
+}
 
+function incrementAmount(product) {
+    product.amount++;
+    updateTotalPrice(product);
+}
+
+function updateTotalPrice(product) {
+    calculateTotalPrice();
+    Cart.updateProduct(product);
+}
+
+function buy() {
+    console.log('entrada buy');
+    for (let index = 0; index < products.value.length; index++) {
+        console.log('entrada for');
+        const product = products.value[index];
+        const resultBought = BuyProductService.buy(product.product.idProduct, product.amount);
+        if (resultBought) {
+            Cart.removeProductFromCart(product.product.idProduct);
+            calculateTotalPrice();
+            confirmed.value = true;
+        }
+    }
+}
+
+calculateTotalPrice();
 </script>
 
 <template>
@@ -24,8 +59,14 @@ const totalPrice = computed(() => {
                 <label for="enderecoEntrega" class="bg-primary text-white p-1 rounded-2">entregar em</label>
                 <h5 id="enderecoEntrega" class="p-2">Rua Bolívia, 342. Ponta Aguda, Blumenau-SC</h5>
                 <hr>
-                <h5 class="p-2">Você Pagará R$ {{ totalPrice }}</h5>
-                <button class="btn btn-primary my-2">Confirmar Compra</button>
+                <h5 class="p-2">Você Pagará R$ {{ totalPrice.toFixed(2) }}</h5>
+                <button class="btn btn-primary my-2" @click="() => buy()">Confirmar Compra</button>
+
+                <!--alerta-->
+                <div class="alert alert-success alert-dismissible fade show" v-if="confirmed" role="alert">
+                    <strong>Obrigado por comprar conosco</strong>, sua encomenda está a caminho!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             </div>
         </div>
 
@@ -45,32 +86,32 @@ const totalPrice = computed(() => {
                 <tr v-for="product in products" :key="product.idProduct">
                     <td>
                         <div class="d-flex">
-                            <img :src="product.images.url" class="img-fluid w-25 h-50" :alt="product.images.altText">
+                            <img :src="product.product.images.url" class="img-fluid w-25 h-50"
+                                :alt="product.product.images.altText">
                             <div class="container mt-3">
-                                <p>{{ product.name }}</p>
+                                <p>{{ product.product.name }}</p>
+
+                                <!--Remover Produto-->
                                 <button class="btn btn-outline-light align-self-bottom" style="color: gray;"
-                                    @click="Cart.removeProductFromCart(product.idProduct)">Remover</button>
+                                    @click="Cart.removeProductFromCart(product.product.idProduct)">Remover</button>
                             </div>
                         </div>
 
-                        <!--Remover Produto-->
                     </td>
                     <td>
                         <div class="d-flex">
-                            <button class="btn btn-light mx-2 fw-bolder fs-5">+</button>
-                            <input class="form-control quantity" type="number" value="1" name="" id="" disabled>
-                            <button class="btn btn-light mx-2 fw-bolder fs-5">-</button>
+                            <button class="btn btn-light mx-2 fw-bolder fs-5"
+                                @click="() => incrementAmount(product)">+</button>
+                            <input class="form-control w-25" type="number" :value="product.amount" name="" id="" disabled>
+                            <button class="btn btn-light mx-2 fw-bolder fs-5"
+                                @click="() => decrementAmount(product)">-</button>
                         </div>
                     </td>
-                    <td>R$ {{ product.price }}</td>
+                    <td>R$ {{ product.product.price.toFixed(2) }}</td>
                 </tr>
             </tbody>
         </table>
     </section>
 </template>
 
-<style scoped>
-.quantity {
-    width: 3em;
-}
-</style>
+<style scoped></style>

@@ -2,8 +2,7 @@
 import { ref } from "vue";
 import Cart from "./services/CartService";
 
-var totalProducts = ref(Cart.products.length || 0);
-
+const totalProducts = ref(Cart.total);
 </script>
 
 <template>

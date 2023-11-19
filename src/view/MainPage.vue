@@ -9,6 +9,7 @@ const products = ref([]);
 
 function GetProducts() {
     return ApiService.request("http://localhost:8080/product").then((data) => {
+        console.log(data);
         products.value = data;
     })
 }
@@ -22,7 +23,8 @@ const filteredProducts = computed(() => {
         return n.name.toLowerCase().startsWith(filter.value.toLowerCase())
     })
 })
-GetProducts()
+
+GetProducts();
 </script>
 
 <template>

@@ -1,15 +1,17 @@
 <script setup>
 import buttonDefault from "../buttons/ButtonDefault.vue";
-import ProductModel from "../../Models/ProductModel";
 import Cart from "../../services/CartService";
+import ItemPedido from "../../Models/ItemPedido";
 
 const props = defineProps({
-  product: ProductModel,
+  product: ItemPedido,
 });
 
 function addToCart() {
-  Cart.addProductToCart(props.product);
+  var pedido = new ItemPedido(props.product, 1);
+  Cart.addProductToCart(pedido);
 }
+
 </script>
 
 <template>
@@ -18,11 +20,11 @@ function addToCart() {
       <button class="btn">
         <img
           :src="product.images.url"
-          class="card-img-top img-fluid rounded"
+          class="card-img-top img-thumbnail img-fluid rounded"
           :alt="product.images.altText"
         />
         <div class="card-body">
-          <h3 class="card-title">{{ product.name }}</h3>
+          <h5 class="card-title">{{ product.name }}</h5>
 
           <h4 class="card-text d-flex">R$ {{ product.price }}</h4>
           <h6 class="card-text d-flex">Em até 12x</h6>
@@ -37,4 +39,4 @@ function addToCart() {
   </div>
 </template>
 
-<style></style>
+<style scoped></style>

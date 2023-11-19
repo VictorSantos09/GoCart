@@ -12,7 +12,6 @@ export default class ApiService {
     }
 
     const response = await fetch(endpoint, options);
-    console.log(response);
     const data = await response.json();
 
     return data;
