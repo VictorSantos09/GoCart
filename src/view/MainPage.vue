@@ -1,7 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
 import ProductCard from "../components/Cards/ProductCard.vue";
-import InputText from "../components/Inputs/InputText.vue";
 import ButtonDefault from "../components/buttons/ButtonDefault.vue";
 import ApiService from "../services/ApiService";
 
@@ -9,20 +8,20 @@ const products = ref([]);
 
 function GetProducts() {
     return ApiService.request("http://localhost:8080/product").then((data) => {
-        console.log(data);
         products.value = data;
     })
 }
-const filter = ref('')
-const filteredProducts = computed(() => {
-    if (filter.value == '') {
-        return products.value
-    }
 
-    return products.value.filter(n => {
-        return n.name.toLowerCase().startsWith(filter.value.toLowerCase())
-    })
-})
+const filter = ref('');
+const filteredProducts = computed(() => {
+    if (filter.value === '') {
+        return products.value;
+    } else {
+        return products.value.filter((product) => {
+            return product.name.toLowerCase().includes(filter.value.toLowerCase());
+        });
+    }
+});
 
 GetProducts();
 </script>
@@ -31,7 +30,7 @@ GetProducts();
     <div class="container">
         <!--Apresentação Produtos-->
         <div class="row mb-5">
-            <InputText class="col" placeholder="Busque o produto" v-model="filter"/>
+            <input class="col form-control" placeholder="Busque o produto" type="text" v-model="filter">
             <ButtonDefault class="col-lg-2  col mx-4 btn-lg" msg="Buscar" />
         </div>
         <div class="row">

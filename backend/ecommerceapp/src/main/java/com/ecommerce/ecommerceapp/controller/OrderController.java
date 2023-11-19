@@ -5,8 +5,11 @@ import com.ecommerce.ecommerceapp.dto.OrderDTO;
 import com.ecommerce.ecommerceapp.model.OrderModel;
 import com.ecommerce.ecommerceapp.repository.OrderRepository;
 import com.ecommerce.ecommerceapp.repository.ProductRepository;
+import com.ecommerce.ecommerceapp.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -16,18 +19,18 @@ public class OrderController {
     private OrderRepository orderRepository;
     @Autowired
     private ProductRepository productRepository;
+    @Autowired
+    private OrderService orderService;
 
     @PostMapping
     @CrossOrigin
     public BaseDTO buy(@RequestBody OrderDTO dto) {
-        var product = productRepository.findById(dto.getIdProduct());
-        if (!product.isPresent()) {
-            return new BaseDTO("produto não encontrado", false);
-        }
+        return orderService.buy(dto);
+    }
 
-        var order = new OrderModel(product.get(), dto.getAmount());
-        orderRepository.save(order);
-
-        return new BaseDTO("pedido finalizado", true);
+    @GetMapping
+    @CrossOrigin
+    public List<OrderModel> get() {
+        return orderRepository.findAll();
     }
 }

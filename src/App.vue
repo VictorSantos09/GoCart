@@ -24,8 +24,8 @@ const totalProducts = ref(Cart.total);
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <router-link to="/">
-              <h4>Sobre Nós</h4>
+            <router-link to="/MyOrders">
+              <h4>Meus Pedidos</h4>
             </router-link>
           </li>
         </ul>
