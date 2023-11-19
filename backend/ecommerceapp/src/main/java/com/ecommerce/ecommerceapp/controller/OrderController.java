@@ -8,6 +8,8 @@ import com.ecommerce.ecommerceapp.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/order")
@@ -29,5 +31,11 @@ public class OrderController {
         orderRepository.save(order);
 
         return new BaseDTO("pedido finalizado", true);
+    }
+
+    @GetMapping
+    @CrossOrigin
+    public List<OrderModel> get(){
+        return  orderRepository.findAll();
     }
 }

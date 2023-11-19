@@ -7,6 +7,7 @@ import MainPage from "./view/MainPage.vue";
 import ComponentsPresentantion from "./view/ComponentsPresentantion.vue";
 import CartPage from "./view/CartPage.vue";
 import ProductDetails from "./view/ProductDetails.vue";
+import MyOrders from "./view/MyOrders.vue";
 
 const routes = [
   { path: "/", component: MainPage },
@@ -17,6 +18,7 @@ const routes = [
     component: ProductDetails,
     props: true,
   },
+  { path: "/myorders", component: MyOrders },
 ];
 
 const router = createRouter({
