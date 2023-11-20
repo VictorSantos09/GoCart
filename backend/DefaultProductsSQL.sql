@@ -1,47 +1,25 @@
--- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
---
--- Host: localhost    Database: gocart
--- ------------------------------------------------------
--- Server version	8.0.35
+INSERT INTO images (url, alt_text, name)
+VALUES
+('https://images.kabum.com.br/produtos/fotos/444038/monitor-gamer-lg-ultragear-27-full-hd-144hz-1ms-ips-hdmi-e-displayport-hdr-10-99-srgb-freesync-premium-vesa-27gn65r_1684763831_gg.jpg', 'Monitor Gamer LG UltraGear 27 Full HD', 'Monitor Gamer LG UltraGear 27 Full HD'),
+('https://images.kabum.com.br/produtos/fotos/461160/headset-gamer-hyperx-cloud-stinger-2-drivers-50mm-preto-519t1aa_1688580735_gg.jpg', 'Headset Gamer HyperX Cloud Stinger 2', 'Headset Gamer HyperX Cloud Stinger 2'),
+('https://images.kabum.com.br/produtos/fotos/sync_mirakl/483435/Notebook-Gamer-Acer-Nitro-5-AMD-Ryzen-7-16GB-RTX-3070TI-SSD-1TB-Tela-15-6-Full-HD-Windows-11-Home-An515-46-R5wf_1693482490_gg.jpg', 'Notebook Gamer Acer Nitro 5, AMD Ryzen 7, 16GB, RTX 3070TI, SSD 1TB, Tela 15.6 Full HD', 'Notebook Gamer Acer Nitro 5, AMD Ryzen 7, 16GB, RTX 3070TI, SSD 1TB, Tela 15.6 Full HD'),
+('https://images.kabum.com.br/produtos/fotos/172365/memoria-kingston-fury-beast-8gb-3200mhz-ddr4-cl16-preto-kf432c16bb-8_1626270523_gg.jpg', 'Memória Kingston Fury Beast, 8GB, 3200MHz, DDR4, CL16, Preto - KF432C16BB/8', 'Memória Kingston Fury Beast, 8GB, 3200MHz, DDR4, CL16, Preto - KF432C16BB/8'),
+('https://images.kabum.com.br/produtos/fotos/369658/fonte-msi-mag-a650bn-atx-650w-80-plus-bronze-pfc-ativo-entrada-bivolt-preto-306-7zp2b22-ce0_1665770996_gg.jpg', 'Fonte MSI MAG A650BN, ATX, 650W, 80 PLUS Bronze, PFC Ativo, Entrada Bivolt, Preto - 306-7ZP2B22-CE0', 'Fonte MSI MAG A650BN, ATX, 650W, 80 PLUS Bronze, PFC Ativo, Entrada Bivolt, Preto - 306-7ZP2B22-CE0'),
+('https://images.kabum.com.br/produtos/fotos/107333/mouse-gamer-sem-fio-logitech-g-pro-wireless-lightspeed-rgb-lightsync-ambidestro-6-botoes-programaveis-hero-25k-910-005271_1644501564_gg.jpg', 'Mouse Gamer Sem Fio Logitech G PRO Wireless LIGHTSPEED, RGB LIGHTSYNC, Ambidestro, 6 Botões Programáveis, HERO 25K - 910-005271', 'Mouse Gamer Sem Fio Logitech G PRO Wireless LIGHTSPEED, RGB LIGHTSYNC, Ambidestro, 6 Botões Programáveis, HERO 25K - 910-005271'),
+('https://images.kabum.com.br/produtos/fotos/462167/placa-de-video-rtx-4060-ti-gigabyte-gv-n406teagle-8gd-g10_1684841706_gg.jpg', 'Placa de Vídeo RTX 4060 Ti Eagle Gigabyte NVIDIA GeForce, 8 GB GDDR6, DLSS, Ray Tracing - GV-N406TEAGLE-8GD G10', 'Placa de Vídeo RTX 4060 Ti Eagle Gigabyte NVIDIA GeForce, 8 GB GDDR6, DLSS, Ray Tracing - GV-N406TEAGLE-8GD G10'),
+('https://images.kabum.com.br/produtos/fotos/134176/cadeira-gamer-tempest-husky-gaming-black-black-700_1619705487_gg.jpg', 'Cadeira Gamer Husky Gaming Tempest 700, Preto, Com Almofadas, Descanso Para Pernas Retrátil, Reclinável - HGMA074', 'Cadeira Gamer Husky Gaming Tempest 700, Preto, Com Almofadas, Descanso Para Pernas Retrátil, Reclinável - HGMA074'),
+('https://images.kabum.com.br/produtos/fotos/100672/placa-mae-asrock-b450m-steel-legend-amd-am4-matx-ddr4-90-mxb9y0-a0uayz_placa-mae-asrock-b450m-steel-legend-amd-am4-matx-ddr4-90-mxb9y0-a0uayz_1552586908_gg.jpg', 'Placa Mãe ASRock B450M Steel Legend, AMD AM4, mATX, DDR4', 'Placa Mãe ASRock B450M Steel Legend, AMD AM4, mATX, DDR4'),
+('https://images.kabum.com.br/produtos/fotos/148914/processador-intel-core-i5-11600kf-11-geracao-cache-12mb-3-9-ghz-4-9ghz-turbo-lga1200-bx8070811600kf_1615571294_gg.jpg', 'Processador Intel Core i5-11600KF 11ª Geração, 3.9 GHz (4.9GHz Turbo), Cache 12MB, Hexa Core, 16 Threads, LGA1200 - BX8070811600KF', 'Processador Intel Core i5-11600KF 11ª Geração, 3.9 GHz (4.9GHz Turbo), Cache 12MB, Hexa Core, 16 Threads, LGA1200 - BX8070811600KF');
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Dumping data for table `images`
---
-
-LOCK TABLES `images` WRITE;
-/*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'Monitor Concórdia 23.8 Pol. LED Full HD','Monitor Concórdia 23.8 Pol. LED Full HD','https://images.kabum.com.br/produtos/fotos/sync_mirakl/459542/Monitor-Conc-rdia-23-8-Pol-LED-Full-HD-75Hz-Freesync-HDMI-e-VGA-Com-Vesa-H238f_1698854294_gg.jpg'),(2,'Placa de Vídeo RTX 4060 Ti Eagle ','Placa de Vídeo RTX 4060 Ti Eagle ','https://images.kabum.com.br/produtos/fotos/462167/placa-de-video-rtx-4060-ti-gigabyte-gv-n406teagle-8gd-g10_1684841706_gg.jpg');
-/*!40000 ALTER TABLE `images` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `products`
---
-
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Com uma qualidade de imagem incrível e ótima para o dia a dia, o monitor da concórdia tem tela de 23,8\" led full hd conta com a tela de tecnologia va para você ter cores mais vivas e vibrantes e um maior ângulo de visão. Tudo isso com um tempo de resposta de 5 ms para você obter o melhor em tudo o que faz, seja jogando, trabalhando ou estudando!  ','Monitor Concórdia 23.8 Pol. LED Full HD, 75Hz, Freesync, HDMI e VGA, Com Vesa - H238f',430,1),(2,'O sistema de resfriamento WINDFORCE possui três Coolers exclusivos de 80 mm, com rotação alternada, 3 tubos de calor de cobre composto diretamente na GPU, coolers ativos 3D e resfriamento de tela, que juntos fornecem dissipação de calor de alta eficiência.','Placa de Vídeo RTX 4060 Ti Eagle Gigabyte NVIDIA GeForce, 8 GB GDDR6, DLSS, Ray Tracing - GV-N406TEAGLE-8GD G10',2649,2);
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2023-11-19 18:52:05
+INSERT INTO products (description, name, price, id_image)
+VALUES
+('Complete seu setup gamer com o monitor LG Ultragear. Desenvolvido para o gamer raíz, com os recursos mais avançados e um design eletrizante que garantem uma experiência imersiva. Com tempo de resposta de 1ms REAL (GtG), taxa de atualização de 144Hz e um painel IPS com cores muito mais vivas, você terá tudo o que precisa para mudar o jogo.', 'Monitor Gamer LG UltraGear 27 Full HD', 949.99, 1),
+('Com um novo design e 2 anos de DTS Headphone:X Spatial Audio, o Cloud Stinger 2 mantém os fundamentos do Cloud Stinger e os refina. Ainda pesando menos de 300g, o Cloud Stinger 2 é leve, mas também tem um grande impacto de áudio. Obtenha uma ampla resposta de frequência para que você não perca pistas de áudio importantes. que denunciem seus oponentes.', 'Headset Gamer HyperX Cloud Stinger 2', 189.99, 2),
+('Notebook acer nitro 5 an515-46-r5wfsistema operacional: windows 11 home 64-bitscpu e chipset: amd ryzen 7 6800h8 núcleos (16 threads)frequência: até 4.7 ghzcache l3 16 mbpara maiores informações consultar o fabricantememória ram: 16 gb ram ddr5 de até 4800 mhz (8 gb em módulo so-dimm + 8 gb em módulo so-dimm)expansível até 32gb ddr5 de até 4800 mhz (2 slots so-dimm com capacidade para até 16 gb cada)tela: placa de vídeo: nvidia® geforce® rtx 3070ti com 8 gb de memória dedicada gddr6 (tgp de 140w).', 'Notebook Gamer Acer Nitro 5, AMD Ryzen 7, 16GB, RTX 3070TI, SSD 1TB, Tela 15.6 Full HD', 6839.05, 3),
+('Memória Kingston Fury Beast A memória Kingston FURY Beast DDR4 proporciona um poderoso aumento de performance para jogos, edição de vídeo e renderização. Ela faz o overclock automático para a especificação de maior performance do módulo que seja suportada pelo sistema* e está pronta para Intel XMP e AMD Ryzen. Com o seu dissipador de calor de perfil baixo, a memória FURY Beast DDR4 permanece fria e pronta para o seu game. 100% testada na fábrica, é a atualização definitiva para seu computador.', 'Memória Kingston Fury Beast, 8GB, 3200MHz, DDR4, CL16, Preto - KF432C16BB/8', 138.99, 4),
+('Oferece aos jogadores uma opção de fonte de alimentação de nível básico segura, confiável e eficiente. Seus principais recursos incluem certificação 80 PLUS Bronze, design de circuito DC para DC, trilho único de 12V, PFC ativo e ventoinha de baixo ruído. O MAG A550BN será uma das melhores escolhas para jogadores que estão apenas começando a olhar para computadores DIY. Após a instalação, os jogadores podem desfrutar imediatamente de uma experiência de desempenho confiável sem configurações adicionais.', 'Fonte MSI MAG A650BN, ATX, 650W, 80 PLUS Bronze, PFC Ativo, Entrada Bivolt, Preto - 306-7ZP2B22-CE0', 289.99, 5),
+('Projetado em colaboração direta de muitos jogadores profissionais de e-sports, o mouse gamer PRO Wireless foi desenvolvido de acordo com os exigentes padrões de alguns dos maiores profissionais de e-sports do mundo. O PRO Wireless gaming mouse foi concebido para oferecer um desempenho de ponta e inclui as mais recentes e avançadas tecnologias disponíveis. Com a tecnologia sem fio LIGHTSPEED, o PRO Wireless supera as limitações de latência, conectividade e energia para oferecer uma conexão de taxa de transmissão de 1 ms, sólida e super-rápida. O PRO Wireless gaming mouse também está equipado com a versão mais recente do sensor HERO 25K, nosso sensor óptico de última geração que é o sensor para jogos de melhor desempenho e eficiência do mercado com sensibilidade ajustável. Play to win.', 'Mouse Gamer Sem Fio Logitech G PRO Wireless LIGHTSPEED, RGB LIGHTSYNC, Ambidestro, 6 Botões Programáveis, HERO 25K - 910-005271', 469.90, 6),
+('"Jogue,transmita, crie. A GeForce RTX 4060 Ti permite que você use os jogos e aplicativos mais recentes com a arquitetura NVIDIA Ada Lovelace ultraeficiente. Experimente jogos imersivos acelerados por IA com ray tracing e DLSS 3 e potencialize seu processo criativo e produtividade com o NVIDIA Studio. O DLSS 3 é um avanço revolucionário em gráficos com tecnologia fornecida por AI que aumenta significativamente o desempenho, ao mesmo tempo em que mantém uma ótima qualidade de imagem e capacidade de resposta. Com base na super-resolução do DLSS, o DLSS 3 adiciona a geração ótica de vários frames para gerar frames totalmente novos e integra a tecnologia de baixa latência do NVIDIA Reflex à capacidade de resposta ideal. "', 'Placa de Vídeo RTX 4060 Ti Eagle Gigabyte NVIDIA GeForce, 8 GB GDDR6, DLSS, Ray Tracing - GV-N406TEAGLE-8GD G10', 2649.99, 7),
+('Conheça a cadeira Husky Gaming Tempest 700! Tenha horas incríveis desfrutando seu gameplay de maneira confortável e aconchegante! Feito com espuma de altíssima densidade e PU, a Cadeira Husky Gaming Tempest 700 possui descanso para os pés, ideal para aquela pausa entre um jogo e outro! Além do design moderno e robusto, a cadeira proporciona ótima performance nas partidas devido a sensação de conforto que é convertida em foco e concentração, tudo que um gamer de verdade precisa para ser o melhor! ', 'Cadeira Gamer Husky Gaming Tempest 700, Preto, Com Almofadas, Descanso Para Pernas Retrátil, Reclinável - HGMA074', 779.99, 8),
+('Placa-mãe ASRock B450M Steel Legend AMD DDR4 Resistente como aço, verdadeira lenda a Steel Legend representa o estado filosófico da sólida durabilidade e irresistível estética. Construída ao redor das especificações e recursos mais exigentes, a série Steel Legend visa os usuários do dia a dia e entusiastas mainstream! Oferecendo uma forte gama de materiais/componentes para assegurar um desempenho estável e confiável.', 'Placa Mãe ASRock B450M Steel Legend, AMD AM4, mATX, DDR4', 633.99, 9),
+('Processador para desktop Intel Core i5-11600KF de 11ª geração. Apresentando suporte para PCIe Gen 4.0, os processadores Intel Core Unlocked são otimizados para produtividade, jogos e overclocking. Solução térmica não inclusa na embalagem. Compatível com placas-mãe baseadas em chipsets da série 500 e selecionadas da série 400. Consulte o fornecedor da placa-mãe para obter detalhes de compatibilidade. 125W.', 'Processador Intel Core i5-11600KF 11ª Geração, 3.9 GHz (4.9GHz Turbo), Cache 12MB, Hexa Core, 16 Threads, LGA1200 - BX8070811600KF', 999.99, 10);
