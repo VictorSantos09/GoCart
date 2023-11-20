@@ -32,17 +32,31 @@ function updateTotalPrice(product) {
 }
 
 function buy() {
-    console.log('entrada buy');
     for (let index = 0; index < products.value.length; index++) {
-        console.log('entrada for');
         const product = products.value[index];
         const resultBought = BuyProductService.buy(product.product.idProduct, product.amount);
         if (resultBought) {
             Cart.removeProductFromCart(product.product.idProduct);
             calculateTotalPrice();
             confirmed.value = true;
+            setTimeout(() => {
+                goToMainPage();
+            }, 2500);
         }
     }
+}
+
+function removeProduct(product) {
+    Cart.removeProductFromCart(product.product.idProduct);
+    reloadPage();
+}
+
+function reloadPage() {
+    location.reload();
+}
+
+function goToMainPage() {
+    window.location.href = '/';
 }
 
 calculateTotalPrice();
@@ -93,7 +107,7 @@ calculateTotalPrice();
 
                                 <!--Remover Produto-->
                                 <button class="btn btn-outline-light align-self-bottom" style="color: gray;"
-                                    @click="Cart.removeProductFromCart(product.product.idProduct)">Remover</button>
+                                    @click="removeProduct(product)">Remover</button>
                             </div>
                         </div>
 
