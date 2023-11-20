@@ -13,6 +13,8 @@ function addToCart() {
   Cart.addProductToCart(order);
 }
 
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 </script>
 
 <template>
@@ -32,7 +34,10 @@ function addToCart() {
     </router-link>
 
     <div class="d-flex justify-content-end p-2">
-      <button class="m-2 btn btn-primary" @click="addToCart()">Adicionar ao Carrinho</button>
+      <a tabindex="0" class="btn btn-lg btn-primary" role="button" data-bs-toggle="popover" data-bs-trigger="focus"
+        data-bs-title="Produto Adicionado" data-bs-content="Esperamos que você goste!" @click="addToCart()">
+        Adicionar
+      </a>
     </div>
   </div>
 </template>
