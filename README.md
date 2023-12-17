@@ -1,5 +1,5 @@
 
-# GoCartAngular
+# GoCart
 
 Esse projeto foi o trabalho final da matéria de Desenvolvimento Web do 2° semestre do curso de Análise e Desenvolvimento de Sistemas.
 
