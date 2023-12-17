@@ -52,7 +52,7 @@ function removeProduct(product) {
 }
 
 function reloadPage() {
-    location.reload();
+    window.location.reload();
 }
 
 function goToMainPage() {

@@ -17,10 +17,11 @@ export default class CartService {
 
   static removeProductFromCart(productId) {
     const index = this.products.findIndex(
-      (product) => product.id === productId
+      (product) => product.product.idProduct === productId
     );
     this.products.splice(index, 1);
-    this.saveProductsToLocalStorage(this.products);  }
+    this.saveProductsToLocalStorage(this.products);
+  }
 
   static updateProduct(product) {
     this.removeProductFromCart(product.id);

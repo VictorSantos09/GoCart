@@ -1,7 +1,69 @@
-# Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# GoCartAngular
 
-## Recommended IDE Setup
+Esse projeto foi o trabalho final da matéria de Desenvolvimento Web do 2° semestre do curso de Análise e Desenvolvimento de Sistemas.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Demonstração
+![GIF de Demonstração](public/Demonstração.gif)
+
+
+## Funcionalidades
+
+- Filtrar Produtos
+- Adicionar ao Carrinho
+- Remover do Carrinho
+- Alterar Quantidade Desejada no Carrinho
+- Efetuar Compra
+- Visualizar Pedidos Realizados
+- Visualizar Detalhes do Produto
+
+## Rodando localmente
+
+# Aviso
+
+Precisa conter o MySQL instalado
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/VictorSantos09/GoCart.git
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd GoCart
+```
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie o front-end
+
+```bash
+  npm run dev
+```
+
+Abra o MySQL e crie um banco de dados nomeado 'gocart'
+
+Execute o backend Java em backend/ecommerceapp
+
+Abra o MySQL e execute o script 'DefaultProductsSQL.sql'
+## Screenshots
+
+![Página Principal](public/Homepage.png)
+![Detalhes do Produto](public/productDetails.png)
+![Meus Pedidos](public/myorders.png)
+![Página do Carrinho](public/CartPage.png)
+
+
+## Stack utilizada
+
+**Front-end:** NodeJS, Vite, VueJS 3, Boostrap, JavaScript, HTML, CSS
+
+**Back-end:** MySQL, Java 17 
+
