@@ -65,5 +65,5 @@ Abra o MySQL e execute o script 'DefaultProductsSQL.sql'
 
 **Front-end:** NodeJS, Vite, VueJS 3, Boostrap, JavaScript, HTML, CSS
 
-**Back-end:** MySQL, Java 17 
+**Back-end:** MySQL, Java 17, SpringBoot, Hibernate JPA 
 
